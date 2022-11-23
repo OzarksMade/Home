@@ -1,0 +1,128 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<meta name="viewport" content="width=device-width"/>
+		<script id="script">
+			setTimeout(function () {
+				const fragment = new URLSearchParams(window.location.hash.slice(1));
+				const appId= fragment.get('id');
+				//const appId = "browning-browser"
+				if(appId) {
+					fetch("index.json")
+					.then(result => result.json())
+					.then(index => {
+						const list = index.apps
+						if(list.includes(appId)) {
+							fetch(appId + "/description.json")
+							.then(result => result.json())
+							.then(description => {
+								document.getElementById("welcome").innerHTML = 
+								"<h style='color:orange;font-size:20px;'>" + description.name + "</h>" +
+								"<image style='width:100%;' src='" + description.id + "/logo.png'></image>" +
+								"<p style='margin:0px;'>" + description.description + "</p>" +
+								"<p style='font-weight:bold;'>Version: " + description.version + "</p>" +
+								"<p style='font-weight:bold;'>Size: " + description.size + "</p>" +
+								"<p style='font-weight:bold;'>Type: " + description.type + "</p>" +
+								//"<p style='font-weight:bold;'>Package Name: " + description.package + "</p>" +
+								"<div style='margin-top:8;text-align:center;'><a href='" + description.id + "/" + description.filename + "' download='" + description.name + " (v" + description.version + ").apk'><button style='border:solid orange;color:orange;font-size:18px;'>Download Now</button></a></div>";
+								
+								var title = document.createElement("title")
+								title.text = description.name
+								document.head.appendChild(title)
+								
+								var link = document.createElement("link")
+								link.rel = "icon"
+								link.type = "image/png"
+								link.href = description.id + "/logo.png"
+								document.head.appendChild(link)
+								
+								var meta = document.createElement("meta")
+								meta.name = "title"
+								meta.content = description.name
+								document.head.appendChild(meta)
+								
+								var meta = document.createElement("meta")
+								meta.name = "description"
+								meta.content = description.preview
+								document.head.appendChild(meta)
+							})
+							.catch(console.error);
+						}
+						else {
+							document.getElementById("welcome").innerHTML = 
+							"<h style='color:orange;font-size:20px;'>Invalid App Selected</h>" +
+							"<p style='margin:0px;'>The app you are trying to view is invalid. Please go to the Apps Page and select a valid app first.</p>" +
+							"<div style='margin-top:8;text-align:center;'><button onClick=\"location.href=\'../apps.html\'\" / style='border:solid orange;color:orange;font-size:18px;'>Apps Page</button></div>";
+							
+							var title = document.createElement("title")
+							title.text = "Select An App"
+							document.head.appendChild(title)
+							
+							var link = document.createElement("link")
+							link.rel = "icon"
+							link.type = "image/png"
+							link.href = "../images/apps.png"
+							document.head.appendChild(link)
+							
+							var meta = document.createElement("meta")
+							meta.name = "title"
+							meta.content = "Select An App"
+							document.head.appendChild(meta)
+							
+							var meta = document.createElement("meta")
+							meta.name = "description"
+							meta.content = "Select an OzarksMade App to View."
+							document.head.appendChild(meta)
+						}
+					})
+					.catch(console.error);
+				}
+				else {
+					document.getElementById("welcome").innerHTML = 
+					"<h style='color:orange;font-size:20px;'>No App Selected</h>" +
+					"<p style='margin:0px;'>You haven't selected an app to view yet. Please go to the Apps Page and select an app first.</p>" +
+					"<div style='margin-top:8;text-align:center;'><button onClick=\"location.href=\'../apps.html\'\" / style='border:solid orange;color:orange;font-size:18px;'>Apps Page</button></div>";
+					
+					var title = document.createElement("title")
+					title.text = "Select An App"
+					document.head.appendChild(title)
+					
+					var link = document.createElement("link")
+					link.rel = "icon"
+					link.type = "image/png"
+					link.href = "../images/apps.png"
+					document.head.appendChild(link)
+					
+					var meta = document.createElement("meta")
+					meta.name = "title"
+					meta.content = "Select An App"
+					document.head.appendChild(meta)
+					
+					var meta = document.createElement("meta")
+					meta.name = "description"
+					meta.content = "Select an OzarksMade App to View."
+					document.head.appendChild(meta)
+				}
+			}, 1);
+		</script>
+	</head>
+	<body style="border:3px solid orange;padding:8;margin:0;">
+		<header style="background-color:orange;padding:5px;text-align:center;">
+			<h style="color:white;font-size:30px;">OzarksMade</h>
+			<div id="links">
+				<a href="https://allthoughts.ozarksmade.cf">AllThoughts</a>
+				<a href="https://bixby.ozarksmade.cf">Bixby</a>
+				<a href="https://www.ozarksmade.cf">OzarksMade Home</a>
+			</div>
+		</header>
+		<div id="page" style="bottom:0px;overflow:auto;padding-bottom:11px;padding-right:11px;position:absolute;top:80px;">
+			<div id="welcome" style="border-radius:5px;border:solid orange;margin-bottom:10px;margin-top:5px;padding:10px;">
+				<h style="color:orange;font-size:20px;">Loading App Details...</h>
+				<p style="margin:0px;">The app details are loading. Please wait patiently until loading is finished. This process should not take long. If you feel it is taking too long, please check your internet connection and try again.</p>
+			</div>
+			<div id="credits" style="display:table;height:40px;">
+				<p id="copyright" style="display:table-cell;padding-left:8px;margin:0;vertical-align:bottom;">Copyright ©2021 OzarksMade v2.0</p>
+			</div>
+		</div>
+	</body>
+</html>
