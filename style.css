@@ -1,0 +1,21 @@
+.tab {
+	background-color:orange;
+	border-radius:2%;
+	display:inline-block;
+	margin-bottom:8px;
+	margin-left:5px;
+	margin-right:5px;
+	margin-top:8px;
+	padding:5px;
+	width:147px;
+}
+
+.tab-head {
+	display:table-cell;
+	font-size:25px;
+	font-weight:bold;
+	height:58px;
+	margin:0px;
+	vertical-align:middle;
+	width:148px;
+}

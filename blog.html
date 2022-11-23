@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>Blog - OzarksMade</title>
+		<link rel = "icon" type = "image/png" href = "images/blog.png">
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<meta name="title" content="Ozarks Tech Thoughts" /> 
+	    <meta name="description" content="Ozarks Tech Thoughts, the OzarksMade Blog. There are many blog posts here covering various subjects about the latest in tech."/>  
+		<meta name="viewport" content="width=device-width">
+		<script>
+			fetch("blog/index.json")
+			.then(result => result.json())
+			.then(list => {
+				for(post of list.posts) {
+					fetch("blog/" + post + "/description.json")
+					.then(result => result.json())
+					.then(description => {
+						document.getElementById("tabs").innerHTML =
+						document.getElementById("tabs").innerHTML +
+						"<div class='tab'>" +
+						"<p class='tab-head'>" + description.name + "</p>" +
+						"<image src='blog/" + description.id + "/image.png' style='width:100%;'></image>" +
+						"<p style='min-height:75px;'>" + description.preview + "</p>" +
+						"<button style='color:orange;' onClick = \"location.href=\'blog/post.html#id=" + description.id + "\'\" />Open</button>" +
+						"</div>";
+					})
+					.catch(console.error);
+				}
+			})
+			.catch(console.error);
+		</script>
+	</head>
+	<body style="border:3px solid orange;padding:8;margin:0;">
+		<header style="background-color:orange;padding:5px;text-align:center;">
+			<h style="color:white;font-size:30px;">OzarksMade</h>
+			<div id="links">
+				<a href="https://allthoughts.ozarksmade.cf">AllThoughts</a>
+				<a href="https://bixby.ozarksmade.cf">Bixby</a>
+				<a href="https://www.ozarksmade.cf">OzarksMade Home</a>
+			</div>
+		</header>
+		<div id="page" style="bottom:0px;overflow:auto;padding-bottom:11px;padding-right:11px;position:absolute;top:80px;">
+			<div id="welcome" style="border-radius:5px;border:solid orange;margin-bottom:10px;margin-top:5px;padding:10px;">
+				<h style="color:orange;font-size:20px;">Ozarks Tech Thoughts</h>
+				<p style="margin:0px;">Welcome to Ozarks Tech Thoughts, the OzarksMade Blog! There are many blog posts here covering various subjects about the latest in tech. View them all by scrolling through the tabs below.</p>
+			</div>
+			<div id="tabs" style="text-align:center;">
+				
+			</div>
+			<div id="credits" style="display:table;height:40px;">
+				<p id="copyright" style="display:table-cell;padding-left:8px;margin:0;vertical-align:bottom;">Copyright ©2021 OzarksMade v2.0</p>
+			</div>
+		</div>
+	</body>
+</html>

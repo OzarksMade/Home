@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>Coding Projects - OzarksMade</title>
+		<link rel = "icon" type = "image/png" href = "images/coding.png">
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<meta name="title" content="OzarksMade Coding Projects" /> 
+	    <meta name="description" content="Coding projects I am currently in the process of developing and completing."/>  
+		<meta name="viewport" content="width=device-width"/>
+		<script>
+			fetch("coding/index.json")
+			.then(result => result.json())
+			.then(list => {
+				for(project of list.projects) {
+					fetch("coding/" + project + "/description.json")
+					.then(result => result.json())
+					.then(description => {
+						document.getElementById("tabs").innerHTML =
+						document.getElementById("tabs").innerHTML +
+						"<div class='tab'>" +
+						"<p class='tab-head'>" + description.name + "</p>" +
+						"<image src='coding/" + description.id + "/image.png' style='width:100%;'></image>" +
+						"<p style='min-height:75px;'>" + description.preview + "</p>" +
+						"<button style='color:orange;' onClick = \"location.href=\'coding/" + description.id + "/" + description.mainFile + "'\" />Open</button>" +
+						"</div>";
+					})
+					.catch(console.error);
+				}
+			})
+			.catch(console.error);
+		</script>
+	</head>
+	<body style="border:3px solid orange;padding:8;margin:0;">
+		<header style="background-color:orange;padding:5px;text-align:center;">
+			<h style="color:white;font-size:30px;">OzarksMade</h>
+			<div id="links">
+				<a href="https://allthoughts.ozarksmade.cf">AllThoughts</a>
+				<a href="https://bixby.ozarksmade.cf">Bixby</a>
+				<a href="https://www.ozarksmade.cf">OzarksMade Home</a>
+			</div>
+		</header>
+		<div id="page" style="bottom:0px;overflow:auto;padding-bottom:11px;padding-right:11px;position:absolute;top:80px;">
+			<div id="welcome" style="border-radius:5px;border:solid orange;margin-bottom:10px;margin-top:5px;padding:10px;">
+				<h style="color:orange;font-size:20px;">OzarksMade Coding Projects</h>
+				<p style="margin:0px;">The following are coding projects I am currently in the process of developing and completing. You can view sneak peeks of them here. Scroll down to see them all.</p>
+			</div>
+			<div id="tabs" style="text-align:center;">
+				
+			</div>
+			<div id="credits" style="display:table;height:40px;">
+				<p id="copyright" style="display:table-cell;padding-left:8px;margin:0;vertical-align:bottom;">Copyright ©2021 OzarksMade v2.0</p>
+			</div>
+		</div>
+	</body>
+</html>
