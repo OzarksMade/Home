@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<meta name="viewport" content="width=device-width"/>
+		<script>
+			setTimeout(function () {
+				const fragment = new URLSearchParams(window.location.hash.slice(1));
+				const postId= fragment.get('id');
+				//const postId = "sample-post"
+				if(postId) {
+					fetch("index.json")
+					.then(result => result.json())
+					.then(index => {
+						const list = index.posts
+						if(list.includes(postId)) {
+							fetch(postId + "/description.json")
+							.then(result => result.json())
+							.then(description => {
+								fetch(postId + "/content.txt")
+								.then(result => result.text())
+								.then(content => {
+									document.getElementById("welcome").innerHTML = 
+									"<h style='color:orange;font-size:20px;'>" + description.name + "</h>" +
+									"<p style='margin-top:0px;'>" + description.preview + "</p>" +
+									"<image style='width:100%;' src='" + description.id + "/image.png'></image>" +
+									"<p>" + content + "</p>";
+									
+									var title = document.createElement("title")
+									title.text = description.name
+									document.head.appendChild(title)
+									
+									var link = document.createElement("link")
+									link.rel = "icon"
+									link.type = "image/png"
+									link.href = description.id + "/image.png"
+									document.head.appendChild(link)
+									
+									var meta = document.createElement("meta")
+									meta.name = "title"
+									meta.content = description.name
+									document.head.appendChild(meta)
+									
+									var meta = document.createElement("meta")
+									meta.name = "description"
+									meta.content = description.preview
+									document.head.appendChild(meta)
+								})
+								.catch(console.error);
+							})
+							.catch(console.error);
+						}
+						else {
+							document.getElementById("welcome").innerHTML = 
+							"<h style='color:orange;font-size:20px;'>Invalid Post Selected</h>" +
+							"<p style='margin:0px;'>The blog post you are trying to view is invalid. Please go to the Blog and select a valid post first.</p>" +
+							"<div style='margin-top:8;text-align:center;'><button onClick=\"location.href=\'../blog.html\'\" / style='border:solid orange;color:orange;font-size:18px;'>Blog</button></div>";
+							
+							var title = document.createElement("title")
+							title.text = "Select A Post"
+							document.head.appendChild(title)
+							
+							var link = document.createElement("link")
+							link.rel = "icon"
+							link.type = "image/png"
+							link.href = "../images/blog.png"
+							document.head.appendChild(link)
+							
+							var meta = document.createElement("meta")
+							meta.name = "title"
+							meta.content = "Select A Post"
+							document.head.appendChild(meta)
+							
+							var meta = document.createElement("meta")
+							meta.name = "description"
+							meta.content = "Select an OzarksMade Blog Post to View."
+							document.head.appendChild(meta)
+						}
+					})
+					.catch(console.error);
+				}
+				else {
+					document.getElementById("welcome").innerHTML = 
+					"<h style='color:orange;font-size:20px;'>No Post Selected</h>" +
+					"<p style='margin:0px;'>You haven't selected an blog post to view yet. Please go to the Blog and select a post first.</p>" +
+					"<div style='margin-top:8;text-align:center;'><button onClick=\"location.href=\'../blog.html\'\" / style='border:solid orange;color:orange;font-size:18px;'>Blog</button></div>";
+					
+					var title = document.createElement("title")
+					title.text = "Select A Post"
+					document.head.appendChild(title)
+					
+					var link = document.createElement("link")
+					link.rel = "icon"
+					link.type = "image/png"
+					link.href = "../images/blog.png"
+					document.head.appendChild(link)
+					
+					var meta = document.createElement("meta")
+					meta.name = "title"
+					meta.content = "Select A Post"
+					document.head.appendChild(meta)
+					
+					var meta = document.createElement("meta")
+					meta.name = "description"
+					meta.content = "Select an OzarksMade Blog Post to View."
+					document.head.appendChild(meta)
+				}
+			}, 1);
+		</script>
+	</head>
+	<body style="border:3px solid orange;padding:8;margin:0;">
+		<header style="background-color:orange;padding:5px;text-align:center;">
+			<h style="color:white;font-size:30px;">OzarksMade</h>
+			<div id="links">
+				<a href="https://allthoughts.ozarksmade.cf">AllThoughts</a>
+				<a href="https://bixby.ozarksmade.cf">Bixby</a>
+				<a href="https://www.ozarksmade.cf">OzarksMade Home</a>
+			</div>
+		</header>
+		<div id="page" style="bottom:0px;overflow:auto;padding-bottom:11px;padding-right:11px;position:absolute;top:80px;">
+			<div id="welcome" style="border-radius:5px;border:solid orange;margin-bottom:10px;margin-top:5px;padding:10px;">
+				<h style="color:orange;font-size:20px;">Loading Blog Post...</h>
+				<p style="margin:0px;">The blog post is loading. Please wait patiently until loading is finished. This process should not take long. If you feel it is taking too long, please check your internet connection and try again.</p>
+			</div>
+			<div id="credits" style="display:table;height:40px;">
+				<p id="copyright" style="display:table-cell;padding-left:8px;margin:0;vertical-align:bottom;">Copyright ©2021 OzarksMade v2.0</p>
+			</div>
+		</div>
+	</body>
+</html>
