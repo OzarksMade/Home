@@ -1,5 +1,6 @@
 {
 	"apps": [
+		"all-thoughts",
 		"browning-browser",
 		"movie-chooser"
 	]
