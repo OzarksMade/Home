@@ -1,0 +1,6 @@
+{
+	"id": "chatbot",
+	"name": "Chatbot",
+	"preview": "This is a bot in development that you can chat with.",
+	"mainFile": "project/chatbot.html"
+}
