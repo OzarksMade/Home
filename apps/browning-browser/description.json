@@ -1,0 +1,13 @@
+{
+	"id": "browning-browser",
+	"name": "Browning Browser",
+	"preview": "The Browser that is simply a browser!",
+	"description": "Browning Browser is a simple, straightforward, easy to use browser app. Browning Browser Version 1.2 for Android is an app you will not want to pass up! This app also has most conventional browser features such as bookmarks, a homepage, and a settings page featuring in app sounds, accessibility, and more. With Browning Browser, you have control of your Browsing experience. Your browsing history is not saved nor sold to third parties. Give Duck Duck Go a rest, and try this app now. You will never regret it. *The native Android System Webview App or Google Chrome app must be enabled on your device for this app to function. Download and Enjoy Now!",
+	"privacy": "This app does not sell your data to third parties nor does it track your browsing history. I do not track or view usage patterns or browsing history either. When using this application, you are browsing absolutely privately. The only way you could be tracked is by the webpages you visit.",
+	"rights": "Browning Browser App Copyright 2020 by Richard Browning, developer. All rights reserved. Decompiling or extracting source code from this application is strictly prohibited. Your use of this application is restricted to personal use only and you may not attempt any other use of the application except for what it is intended. You may not edit, change, or modify this application to make it function other than intended. Except for recommending, reselling this app is prohibited.",
+	"filename": "BrowningBrowser_release.apk",
+	"package": "com.ozarksmade.browser",
+	"size": "4.29 MB",
+	"type": ".apk",
+	"version": "1.2"
+}
