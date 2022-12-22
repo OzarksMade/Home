@@ -6,7 +6,7 @@
 	"privacy": "This app does not sell your data to third parties nor does it track your browsing history. I do not track or view usage patterns or browsing history either. When using this application, you are browsing absolutely privately. The only way you could be tracked is by the webpages you visit.",
 	"rights": "Browning Browser App Copyright 2020 by Richard Browning, developer. All rights reserved. Decompiling or extracting source code from this application is strictly prohibited. Your use of this application is restricted to personal use only and you may not attempt any other use of the application except for what it is intended. You may not edit, change, or modify this application to make it function other than intended. Except for recommending, reselling this app is prohibited.",
 	"filename": "BrowningBrowser_release.apk",
-	"package": "com.ozarksmade.browser",
+	"package": "com.browningapps.browser",
 	"size": "4.29 MB",
 	"type": ".apk",
 	"version": "1.2"
