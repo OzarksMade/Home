@@ -1,2 +1,7 @@
 https://ozarksmade.net/
-https://ozarksmade.net/
+https://ozarksmade.net/about
+https://ozarksmade.net/apps
+https://ozarksmade.net/blog
+https://ozarksmade.net/contact
+https://ozarksmade.net/legal
+https://ozarksmade.net/projects
