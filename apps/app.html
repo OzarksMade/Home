@@ -27,7 +27,7 @@
 								"<div style='margin-top:8;text-align:center;'><a href='" + description.id + "/" + description.filename + "' download='" + description.name + " (v" + description.version + ").apk'><button style='border:solid orange;color:orange;font-size:18px;'>Download Now</button></a></div>";
 								
 								var title = document.createElement("title")
-								title.text = description.name
+								title.text = (description.name + " - OzarksMade")
 								document.head.appendChild(title)
 								
 								var link = document.createElement("link")
@@ -38,7 +38,7 @@
 								
 								var meta = document.createElement("meta")
 								meta.name = "title"
-								meta.content = description.name
+								meta.content = description.name + " - OzarksMade")
 								document.head.appendChild(meta)
 								
 								var meta = document.createElement("meta")
