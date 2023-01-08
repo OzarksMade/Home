@@ -24,7 +24,8 @@
 									"<h style='color:orange;font-size:20px;'>" + description.name + "</h>" +
 									"<p style='margin-top:0px;'>" + description.preview + "</p>" +
 									"<image style='width:100%;' src='" + description.id + "/image.png'></image>" +
-									"<p innerText='" + content + "'></p>";
+									"<p id='content'></p>";
+									document.getElementById("content").innerText = content;
 									
 									var title = document.createElement("title")
 									title.text = (description.name + " - OzarksMade")
