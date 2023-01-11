@@ -2,6 +2,16 @@
 	"id": "sample-post",
 	"name": "Sample Post",
 	"preview": "This is a nice sample blog post about tasty samples. : )",
-	"date": "December 31st, 1969 @ 11:59:59 PM",
-	"published": true
+	"date": {
+		"posted": 0,
+		"updated": ,
+		"date-readable": "December 31st, 1969 @ 11:59:59 PM",
+		"updated-readable": "January 1st, 2023 @ 12:00:00 AM"
+	}
+	"published": true,
+	"images": [
+		"image_1.png",
+		"image_2.png",
+		"image_3.png"
+	]
 }
