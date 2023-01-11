@@ -20,31 +20,33 @@
 								fetch(postId + "/content.txt")
 								.then(result => result.text())
 								.then(content => {
-									document.getElementById("welcome").innerHTML = 
-									"<h style='color:orange;font-size:20px;'>" + description.name + "</h>" +
-									"<p style='margin-top:0px;'>" + description.preview + "</p>" +
-									"<image style='width:100%;' src='" + description.id + "/image.png'></image>" +
-									"<pre style='font-family:sans-serif;white-space:pre-wrap;'>" + content + "</pre>";
-									
-									var title = document.createElement("title")
-									title.text = (description.name + " - OzarksMade")
-									document.head.appendChild(title)
-									
-									var link = document.createElement("link")
-									link.rel = "icon"
-									link.type = "image/png"
-									link.href = description.id + "/image.png"
-									document.head.appendChild(link)
-									
-									var meta = document.createElement("meta")
-									meta.name = "title"
-									meta.content = (description.name + " - OzarksMade")
-									document.head.appendChild(meta)
-									
-									var meta = document.createElement("meta")
-									meta.name = "description"
-									meta.content = description.preview
-									document.head.appendChild(meta)
+									if(description.published == true) {
+										document.getElementById("welcome").innerHTML = 
+										"<h style='color:orange;font-size:20px;'>" + description.name + "</h>" +
+										"<p style='margin-top:0px;'>" + description.preview + "</p>" +
+										"<image style='width:100%;' src='" + description.id + "/image.png'></image>" +
+										"<pre style='font-family:sans-serif;white-space:pre-wrap;'>" + content + "</pre>";
+										
+										var title = document.createElement("title")
+										title.text = (description.name + " - OzarksMade")
+										document.head.appendChild(title)
+										
+										var link = document.createElement("link")
+										link.rel = "icon"
+										link.type = "image/png"
+										link.href = description.id + "/image.png"
+										document.head.appendChild(link)
+										
+										var meta = document.createElement("meta")
+										meta.name = "title"
+										meta.content = (description.name + " - OzarksMade")
+										document.head.appendChild(meta)
+										
+										var meta = document.createElement("meta")
+										meta.name = "description"
+										meta.content = description.preview
+										document.head.appendChild(meta)
+									}
 								})
 								.catch(console.error);
 							})
