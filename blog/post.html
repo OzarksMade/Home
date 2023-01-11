@@ -47,6 +47,9 @@
 										meta.content = description.preview
 										document.head.appendChild(meta)
 									}
+									else {
+										alert("This blog post has not been published yet.");
+									}
 								})
 								.catch(console.error);
 							})
