@@ -2,5 +2,6 @@
 	"id": "sample-post",
 	"name": "Sample Post",
 	"preview": "This is a nice sample blog post about tasty samples. : )",
-	"date": "0"
+	"date": "0",
+	"published": true
 }
