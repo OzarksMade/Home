@@ -2,6 +2,14 @@
 	"id": "note20-review",
 	"name": "Note20 5G Review",
 	"preview": "1 year later: I review the Samsung Galaxy Note 20 5G.",
-	"date": "January 10th, 2023 @ 10:05 PM",
-	"published": true
+	"date": {
+		"posted": 0,
+		"updated": null,
+		"date-readable": "January 10th, 2023 @ 10:05 PM",
+		"updated-readable": null
+	}
+	"published": true,
+	"images": [
+		
+	]
 }
