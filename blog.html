@@ -15,14 +15,16 @@
 					fetch("blog/" + post + "/description.json")
 					.then(result => result.json())
 					.then(description => {
-						document.getElementById("tabs").innerHTML =
-						document.getElementById("tabs").innerHTML +
-						"<div class='tab'>" +
-						"<p class='tab-head'>" + description.name + "</p>" +
-						"<image src='blog/" + description.id + "/image.png' style='width:100%;'></image>" +
-						"<p style='min-height:75px;'>" + description.preview + "</p>" +
-						"<button style='color:orange;' onClick = \"location.href=\'blog/post.html#id=" + description.id + "\'\" />Open</button>" +
+						if(description.published == true) {
+							document.getElementById("tabs").innerHTML =
+							document.getElementById("tabs").innerHTML +
+							"<div class='tab'>" +
+							"<p class='tab-head'>" + description.name + "</p>" +
+							"<image src='blog/" + description.id + "/image.png' style='width:100%;'></image>" +
+							"<p style='min-height:75px;'>" + description.preview + "</p>" +
+							"<button style='color:orange;' onClick = \"location.href=\'blog/post.html#id=" + description.id + "\'\" />Open</button>" +
 						"</div>";
+						}
 					})
 					.catch(console.error);
 				}
