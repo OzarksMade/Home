@@ -5,8 +5,8 @@
 	"date": {
 		"posted": 0,
 		"updated": 1672552800000,
-		"posted-readable": "December 31st, 1969 @ 11:59:59 PM",
-		"updated-readable": "January 1st, 2023 @ 12:00:00 AM"
+		"postedReadable": "December 31st, 1969 @ 11:59:59 PM",
+		"updatedReadable": "January 1st, 2023 @ 12:00:00 AM"
 	},
 	"published": true,
 	"images": [
