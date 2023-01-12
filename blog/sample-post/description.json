@@ -10,8 +10,17 @@
 	},
 	"published": true,
 	"images": [
-		"image_1.png",
-		"image_2.png",
-		"image_3.png"
+		{
+			"path": "image_1.png",
+			"alt": "Sample Image 1"
+		},
+		{
+			"path": "image_1.png",
+			"alt": "Sample Image 2"
+		},
+		{
+			"path": "image_1.png",
+			"alt": "Sample Image 3"
+		}
 	]
 }
