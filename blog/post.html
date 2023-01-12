@@ -29,7 +29,9 @@
 										"<pre style='font-family:sans-serif;white-space:pre-wrap;'>" + content + "</pre>";
 										
 										for(imagePath of description.images) {
-											
+											document.getElementById("welcome").innerHTML =
+											document.getElementById("welcome").innerHTML +
+											"<image src='" + imagePath + "' style='width:100%;'></image>";
 										}
 										
 										var title = document.createElement("title")
