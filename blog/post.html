@@ -26,8 +26,13 @@
 										"<p style='margin-top:0px;'>" + description.preview + "</p>" +
 										"<p style='color:gray;'>Date: " + description.date.postedReadable + "</p>" +
 										"<image style='width:100%;' src='" + description.id + "/image.png'></image>" +
-										"<pre style='font-family:sans-serif;white-space:pre-wrap;margin-bottom:40px;'>" + content + "</pre>" +
-										"<h style='color:orange;font-size:20px;'>Attached Images</h>";
+										"<pre style='font-family:sans-serif;white-space:pre-wrap;margin-bottom:40px;'>" + content + "</pre>";
+										
+										if(images.length > 0) {
+											document.getElementById("welcome").innerHTML =
+											document.getElementById("welcome").innerHTML +
+											"<h style='color:orange;font-size:20px;'>Attached Images</h>";
+										}
 										
 										for(image of description.images) {
 											document.getElementById("welcome").innerHTML =
