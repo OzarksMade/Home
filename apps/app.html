@@ -19,7 +19,7 @@
 							.then(description => {
 								document.getElementById("welcome").innerHTML = 
 								"<h style='color:orange;font-size:20px;'>" + description.name + "</h>" +
-								"<image style='width:100%;' src='" + description.id + "/logo.png'></image>" +
+								"<image style='width:100%;max-width:340px;' src='" + description.id + "/logo.png'></image>" +
 								"<p style='margin:0px;'>" + description.description + "</p>" +
 								"<p style='font-weight:bold;'>Version: " + description.version + "</p>" +
 								"<p style='font-weight:bold;'>Size: " + description.size + "</p>" +
