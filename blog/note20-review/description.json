@@ -10,6 +10,30 @@
 	},
 	"published": true,
 	"images": [
+		{
+			"alt": "Back of Note 20 and its companion S Pen",
+			"path": "1.jpg"
+		},
+		{
+			"alt": "Note 20 home screen and S Pen",
+			"path": "2.jpg"
+		},
+		{
+			"alt": "Gorilla Glass 5 meets aluminum frame at Note 20's chin",
+			"path": "3.jpg"
+		},
+		{
+			"alt": "5G Connectivity in use on Note 20 lock screen",
+			"path": "4.jpg"
+		},
+		{
+			"alt": "Note 20 rear camera frame and design",
+			"path": "5.jpg"
+		},
+		{
+			"alt": "Overall view of the Note 20 5G from lock screen",
+			"path": "6.jpg"
+		}
 		
 	]
 }
